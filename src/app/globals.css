@@ -1,25 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-/* ---break---
-*/
-@custom-variant dark (&:is(.dark *));
 
-/* File ini sudah kita bersihkan dari styling bawaan Next.js.
-  Nanti kita akan menambahkan variabel warna dari Shadcn UI di sini.
-*/
-
-@theme {
-  /* Konfigurasi tema custom akan masuk ke blok ini nanti */
-}
-
-body {
-  background-color: #f8fafc; /* Warna background default yang lembut (slate-50) */
-  color: #0f172a; /* Warna text default (slate-900) */
-}
-
-/* ---break---
-*/
+/* Aktifkan mode gelap berbasis class untuk Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: oklch(1 0 0);
@@ -56,9 +40,6 @@ body {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* ---break---
-*/
-
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -92,9 +73,6 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
-/* ---break---
-*/
 
 @theme inline {
   --font-sans: var(--font-sans);
@@ -137,9 +115,6 @@ body {
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
-
-/* ---break---
-*/
 
 @layer base {
   * {
